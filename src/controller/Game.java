@@ -43,6 +43,8 @@ public class Game {
 
 
         Scanner console = new Scanner(System.in);
+        System.out.println("From the imagination of Carl Sagan comes:" );
+        HUD.titleScreen();
 
         while(console.hasNextLine()){
             // get i/o, do stuff.
@@ -51,7 +53,7 @@ public class Game {
             alien.move(input);
             // distance travel'd and time taken in vehicle
 
-            HUD.update();
+            HUD.update(input);
         }
     }
 

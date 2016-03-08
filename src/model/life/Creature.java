@@ -5,7 +5,7 @@ import model.journey.Point;
 /**
  * Created by C1575287 on 07/03/2016.
  */
-public class Creature {
+public class Creature extends Organism{
 
     String name;
     // track players current position and moveIt() by 1 on x, y on an imaginary grid.
