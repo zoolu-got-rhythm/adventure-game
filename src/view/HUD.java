@@ -1,5 +1,7 @@
 package view;
 
+import model.WorldMap;
+
 /**
  * Created by C1575287 on 07/03/2016.
  */
@@ -19,6 +21,18 @@ public class HUD {
         System.out.println("|      s      |");
         System.out.println("+-------------+");
 
+    }
+
+    public static void constructMap(WorldMap map){
+        String drawMap;
+
+        String x = "";
+        if(point == loop){
+            x = pos; 
+        }
+        for (int i = 0; i <= map.getH(); i++){
+            drawMap += x;
+        }
     }
 
     public static void titleScreen(){

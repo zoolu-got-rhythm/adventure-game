@@ -29,12 +29,12 @@ public class Game {
         Vehicle player = new Vehicle(alien, "flying saucer", 500);
 
         // plot co-ordinates for locations on earth
-        WorldMap earth = new WorldMap();
+        WorldMap earth = new WorldMap(10, 10);
         earth.plot(new RouteLeg(new Point(0,0, new Location("texas")), new Point(3,5, new Location("china"))));
         earth.plot(new RouteLeg(new Point(3,5, new Location("wales")), new Point(10,10, new Location("bombay"))));
 
         // plot co-ordinates for locations on the moon
-        WorldMap moon = new WorldMap();
+        WorldMap moon = new WorldMap(5, 5);
         earth.plot(new RouteLeg(new Point(0,0, new Location("moon landing site")), new Point(3,5, new Location("giant crater"))));
 
         milkyWay.addPlanet(new Planet("earth", 5.55, 234213422, earth));
@@ -50,10 +50,15 @@ public class Game {
             // get i/o, do stuff.
             System.out.println("move: N, E, S, W");
             String input = console.next();
-            alien.move(input);
+
+            // move Creature by x or y on planet x
+            Creature.move(alien, input, earth); // static meth
             // distance travel'd and time taken in vehicle
 
             HUD.update(input);
+
+
+
         }
     }
 

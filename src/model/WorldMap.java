@@ -9,8 +9,12 @@ import java.util.Vector;
  */
 public class WorldMap {
     Vector<RouteLeg> locations = new Vector<RouteLeg>();
-
-    public WorldMap(){}
+    int w;
+    int h;
+    public WorldMap(int width, int height){
+        this.w = width;
+        this.h = height;
+    }
 
     public void plot(RouteLeg legs){
         locations.add(legs);
@@ -25,4 +29,11 @@ public class WorldMap {
     }
 
 
+    public int getW() {
+        return w;
+    }
+
+    public int getH() {
+        return h;
+    }
 }
