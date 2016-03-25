@@ -11,6 +11,7 @@ public class WorldMap {
     Vector<RouteLeg> locations = new Vector<RouteLeg>();
     int w;
     int h;
+
     public WorldMap(int width, int height){
         this.w = width;
         this.h = height;

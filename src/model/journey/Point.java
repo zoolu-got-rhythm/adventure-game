@@ -64,9 +64,9 @@ public class Point {
             setX(0);
         } else if(getY() == -1){
             setY(0);
-        } else if(getX() == map.getW()){
+        } else if(getX() == map.getW() + 1){
             this.x -= 1;
-        } else if(getY() == map.getH()){
+        } else if(getY() == map.getH() + 1){
             this.y -= 1;
         } else{
             System.out.println("you are in bounds.");

@@ -6,10 +6,10 @@ package model.life;
 public class Vehicle {
 
     // init
-    String name;
-    int speed;
-    Creature driver;
-    double fuel = 10;
+    public String name;
+    public int speed;
+    public Creature driver;
+    public double fuel = 10;
 
     @Override
     public String toString() {
@@ -25,5 +25,9 @@ public class Vehicle {
         this.driver = species;
         this.name = vehicle;
         this.speed = horsePower;
+    }
+
+    public void drainPetrol(int n){
+        this.fuel = fuel - n;
     }
 }

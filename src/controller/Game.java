@@ -25,8 +25,8 @@ public class Game {
         Galaxy milkyWay = new Galaxy();
 
         // create main player obj with origin point
-        Creature alien = new Creature("Jazzo from outta' space", "E.T", new Point(0, 0));
-        Vehicle player = new Vehicle(alien, "flying saucer", 500);
+        Creature alien = new Creature("Jazzo", "E.T", new Point(0, 0));
+        Vehicle saucer = new Vehicle(alien, "flying saucer", 500);
 
         // plot co-ordinates for locations on earth
         WorldMap earth = new WorldMap(10, 10);
@@ -43,8 +43,13 @@ public class Game {
 
 
         Scanner console = new Scanner(System.in);
+
+        // encapsulate this stuff into the HUD
         System.out.println("From the imagination of Carl Sagan comes:" );
         HUD.titleScreen();
+        System.out.println("You are an: " + alien.race + " named: " + alien.name + ".");
+        System.out.println("You've been selected by the government to do the annual survey of the milky way \nand to monitor the progress of mankind.");
+        System.out.println("Please Select a planet: Earth, the moon"); //loop through galaxy planets
 
         while(console.hasNextLine()){
             // get i/o, do stuff.
@@ -52,13 +57,12 @@ public class Game {
             String input = console.next();
 
             // move Creature by x or y on planet x
-            Creature.move(alien, input, earth); // static meth
+            Creature.move(saucer.driver, input, earth); // static meth
+            saucer.drainPetrol(1);
             // distance travel'd and time taken in vehicle
 
             HUD.update(input);
-
-
-
+            HUD.vehicleInfo(saucer);
         }
     }
 

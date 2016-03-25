@@ -22,6 +22,7 @@ public class Galaxy {
             planetNames += planets.get(i).name + ", ";
         }
         System.out.println(planetNames + " get sucked up into a black hole.. ");
+        // delete all objects on heap
     }
 
 }

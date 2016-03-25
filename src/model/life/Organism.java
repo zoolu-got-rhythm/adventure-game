@@ -5,7 +5,7 @@ package model.life;
  */
 public class Organism {
 
-    String race = "unknown";
+    public String race = "unknown";
     int lifespan = 50;
     int hp = 100;
 
@@ -34,7 +34,7 @@ public class Organism {
         this.hp = hp;
     }
 
-    public Organism(){
-
+    public Organism(String species){
+        this.race = species;
     }
 }

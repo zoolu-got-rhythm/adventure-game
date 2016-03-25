@@ -8,13 +8,13 @@ import model.journey.Point;
  */
 public class Creature extends Organism{
 
-    String name;
+    public String name;
     // track players current position and moveIt() by 1 on x, y on an imaginary grid.
     Point pos;
 
     public Creature(String name, String race, Point origin){
-        super();
-        this.setRace(race);  // default race is "unknown"
+        super(race);
+        // this.setRace(race);  // default race is "unknown"
         this.name = name;
         this.pos = origin;
 
@@ -44,12 +44,11 @@ public class Creature extends Organism{
         creature.pos.isOutOfBounds(map);
 
         System.out.println(creature.name + " " + creature.pos.currentPosition());
-        drainPetrol(1);
+
     }
 
-    private static void drainPetrol(int n){
-        // vehicle petrol - n;
-    }
+    public static void encounter(){
 
+    }
 
 }
