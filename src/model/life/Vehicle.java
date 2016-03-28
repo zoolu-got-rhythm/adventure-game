@@ -28,6 +28,14 @@ public class Vehicle {
     }
 
     public void drainPetrol(int n){
-        this.fuel = fuel - n;
+        if(this.fuel == 0){
+            System.out.println("fly back up and re-fuel");
+            // return to select planets
+        }else{
+            this.fuel = fuel - n;
+        }
+
+
+       // if(this.fuel == 0) // return to galaxy, count items and select a planet.
     }
 }

@@ -28,6 +28,13 @@ public class Game {
         Creature alien = new Creature("Jazzo", "E.T", new Point(0, 0));
         Vehicle saucer = new Vehicle(alien, "flying saucer", 500);
 
+        // create 2 npc's
+        Creature human = new Creature("Hill billy with pitchfork", "homo-sapien", new Point(5, 5));
+        Vehicle tractor = new Vehicle(human, "tractor", 1000);
+
+        Creature buzz = new Creature("Buzz Aldrin", "homo-sapien", new Point(5, 5));
+        Vehicle buggy = new Vehicle(buzz, "space buggy", 1000);
+
         // plot co-ordinates for locations on earth
         WorldMap earth = new WorldMap(10, 10);
         earth.plot(new RouteLeg(new Point(0,0, new Location("texas")), new Point(3,5, new Location("china"))));
@@ -44,25 +51,37 @@ public class Game {
 
         Scanner console = new Scanner(System.in);
 
+        public void begin() {
+
         // encapsulate this stuff into the HUD
-        System.out.println("From the imagination of Carl Sagan comes:" );
+        System.out.println("From the imagination of Carl Sagan comes:");
         HUD.titleScreen();
         System.out.println("You are an: " + alien.race + " named: " + alien.name + ".");
         System.out.println("You've been selected by the government to do the annual survey of the milky way \nand to monitor the progress of mankind.");
-        System.out.println("Please Select a planet: Earth, the moon"); //loop through galaxy planets
+        System.out.println("Please Select a planet: Earth, Moon"); //loop through galaxy planets
 
-        while(console.hasNextLine()){
-            // get i/o, do stuff.
-            System.out.println("move: N, E, S, W");
-            String input = console.next();
+            if (planet.toUpperCase() == "earth") {
 
-            // move Creature by x or y on planet x
-            Creature.move(saucer.driver, input, earth); // static meth
-            saucer.drainPetrol(1);
-            // distance travel'd and time taken in vehicle
+            while (console.hasNextLine()) {
+                // get i/o, do stuff.
+                System.out.println("move: N, E, S, W");
+                String input = console.next();
 
-            HUD.update(input);
-            HUD.vehicleInfo(saucer);
+                // move Creature by x or y on planet x
+                Creature.move(saucer.driver, input, earth); // static meth
+                Creature.checkEncounter(saucer.driver, tractor.driver);
+                saucer.drainPetrol(1);
+                earth.getLocation(saucer.driver);
+
+
+                HUD.update(input);
+                HUD.vehicleInfo(saucer);
+            }
+        } else if (planet.toUpperCase() == "moon") {
+            // moon
+        } else {
+            begin();
+            }
         }
     }
 

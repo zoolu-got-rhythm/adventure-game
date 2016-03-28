@@ -1,6 +1,7 @@
 package model;
 
 import model.journey.RouteLeg;
+import model.life.Creature;
 
 import java.util.Vector;
 
@@ -21,8 +22,22 @@ public class WorldMap {
         locations.add(legs);
     }
 
-    private String currentLocation(int index){
-         return ""; //locations.name; //locations.get(index);
+    public String getLocation(Creature c){
+        // switch statement: check current pos on point: if x and y == 0,2, locations.get(2);
+
+        // loop through locations and check if any of their point.x and y's match with the currentPos,
+        // if so run a method where you can check for their things.
+        for (int i = 0; i < locations.size(); i++){
+            if(c.pos.currentPosition() == locations.get(i)){
+                locations.get(i).place.name;
+            }else{
+                System.out.println("there is no location here.");
+            }
+        }
+
+        return ""; //locations.name; //locations.get(index)
+
+
     }
 
     private double DistanceTraveld(){

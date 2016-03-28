@@ -10,7 +10,7 @@ public class Creature extends Organism{
 
     public String name;
     // track players current position and moveIt() by 1 on x, y on an imaginary grid.
-    Point pos;
+    public Point pos;
 
     public Creature(String name, String race, Point origin){
         super(race);
@@ -43,12 +43,30 @@ public class Creature extends Organism{
 
         creature.pos.isOutOfBounds(map);
 
-        System.out.println(creature.name + " " + creature.pos.currentPosition());
+        System.out.println(creature.name + "'s position is: " + creature.pos.currentPosition());
 
     }
 
-    public static void encounter(){
+    public static void checkEncounter(Creature one, Creature two){
+        if(one.pos.getX() == two.pos.getX()){
+            System.out.println("you encounter: " + two.name);
+            fight(one, two);
+        }
+    }
 
+    private static void fight(Creature one, Creature two){
+        // one.hit(two);
+        // two.hit(one);
+        // HUD.damageTaken();
+        if(one.hp <= 0){
+            // one perishes..
+            // game over.
+        }else if(two.hp <= 0){
+            // two perishes
+            // delete two
+        }else{
+            fight(one, two);
+        }
     }
 
 }
