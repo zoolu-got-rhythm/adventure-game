@@ -65,7 +65,7 @@ public class Creature extends Organism{
             // two perishes
             // delete two
         }else{
-            fight(one, two);
+            // fight(one, two);
         }
     }
 

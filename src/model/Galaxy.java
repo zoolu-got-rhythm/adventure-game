@@ -25,4 +25,17 @@ public class Galaxy {
         // delete all objects on heap
     }
 
+    public void getPlanets(){
+        String planetNames = "Available planets are: ";
+        for (int i = 0; i < planets.size(); i++){
+            if(i < planets.size() - 1){
+                planetNames += planets.get(i).name + ", ";
+            }else{
+                planetNames += "and the " + planets.get(i).name + ".";
+            }
+        }
+        System.out.println(planetNames);
+        // delete all objects on heap
+    }
+
 }

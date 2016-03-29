@@ -32,7 +32,7 @@ public class Game {
         Creature human = new Creature("Hill billy with pitchfork", "homo-sapien", new Point(5, 5));
         Vehicle tractor = new Vehicle(human, "tractor", 1000);
 
-        Creature buzz = new Creature("Buzz Aldrin", "homo-sapien", new Point(5, 5));
+        Creature buzz = new Creature("Buzz Aldrin", "homo-sapien", new Point(3, 4));
         Vehicle buggy = new Vehicle(buzz, "space buggy", 1000);
 
         // plot co-ordinates for locations on earth
@@ -58,8 +58,8 @@ public class Game {
         HUD.titleScreen();
         System.out.println("You are an: " + alien.race + " named: " + alien.name + ".");
         System.out.println("You've been selected by the government to do the annual survey of the milky way \nand to monitor the progress of mankind.");
-        milkyWay.blackHole();
-        System.out.println("Please Select a planet: Earth, Moon"); //loop through galaxy planets
+        milkyWay.getPlanets();
+        System.out.println("Please Select a planet."); //loop through galaxy planets
         String planet = console.next();
 
         if (planet.toUpperCase().equals("EARTH")) {
@@ -81,6 +81,7 @@ public class Game {
             }
 
         } else if (planet.toUpperCase().equals("MOON")) {
+            System.out.println("you land on the moon in zero G");
             while (console.hasNextLine()) {
                 // get i/o, do stuff.
                 System.out.println("move: N, E, S, W");
