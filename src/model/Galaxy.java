@@ -16,7 +16,7 @@ public class Galaxy {
         planets.addElement(x);
     }
 
-    private void blackHole(){
+    public void blackHole(){
         String planetNames = "";
         for (int i = 0; i < planets.size(); i++){
             planetNames += planets.get(i).name + ", ";

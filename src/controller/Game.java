@@ -42,7 +42,7 @@ public class Game {
 
         // plot co-ordinates for locations on the moon
         WorldMap moon = new WorldMap(5, 5);
-        earth.plot(new RouteLeg(new Point(0,0, new Location("moon landing site")), new Point(3,5, new Location("giant crater"))));
+        moon.plot(new RouteLeg(new Point(0,0, new Location("moon landing site")), new Point(3,5, new Location("giant crater"))));
 
         milkyWay.addPlanet(new Planet("earth", 5.55, 234213422, earth));
         milkyWay.addPlanet(new Planet("moon", 1.24, 0, moon));
@@ -51,16 +51,18 @@ public class Game {
 
         Scanner console = new Scanner(System.in);
 
-        public void begin() {
+
 
         // encapsulate this stuff into the HUD
         System.out.println("From the imagination of Carl Sagan comes:");
         HUD.titleScreen();
         System.out.println("You are an: " + alien.race + " named: " + alien.name + ".");
         System.out.println("You've been selected by the government to do the annual survey of the milky way \nand to monitor the progress of mankind.");
+        milkyWay.blackHole();
         System.out.println("Please Select a planet: Earth, Moon"); //loop through galaxy planets
+        String planet = console.next();
 
-            if (planet.toUpperCase() == "earth") {
+        if (planet.toUpperCase().equals("EARTH")) {
 
             while (console.hasNextLine()) {
                 // get i/o, do stuff.
@@ -77,12 +79,27 @@ public class Game {
                 HUD.update(input);
                 HUD.vehicleInfo(saucer);
             }
-        } else if (planet.toUpperCase() == "moon") {
-            // moon
-        } else {
-            begin();
+
+        } else if (planet.toUpperCase().equals("MOON")) {
+            while (console.hasNextLine()) {
+                // get i/o, do stuff.
+                System.out.println("move: N, E, S, W");
+                String input = console.next();
+
+                // move Creature by x or y on planet x
+                Creature.move(saucer.driver, input, moon); // static meth
+                Creature.checkEncounter(saucer.driver, buggy.driver);
+                saucer.drainPetrol(1);
+                moon.getLocation(saucer.driver);
+
+
+                HUD.update(input);
+                HUD.vehicleInfo(saucer);
             }
-        }
+        } else {
+            System.out.println("plz type in a planet..");
+            }
+
     }
 
 

@@ -27,13 +27,11 @@ public class WorldMap {
 
         // loop through locations and check if any of their point.x and y's match with the currentPos,
         // if so run a method where you can check for their things.
-        for (int i = 0; i < locations.size(); i++){
-            if(c.pos.currentPosition() == locations.get(i)){
-                locations.get(i).place.name;
-            }else{
-                System.out.println("there is no location here.");
-            }
-        }
+//        for (int i = 0; i < locations.size(); i++){
+//            if(c.pos.currentPosition() == locations.get(i).x){
+//                System.out.println("you are at: " + locations.get(i).place.name);
+//            }
+//        }
 
         return ""; //locations.name; //locations.get(index)
 
