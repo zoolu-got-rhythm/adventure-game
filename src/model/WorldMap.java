@@ -34,6 +34,7 @@ public class WorldMap {
                 System.out.println("you are at: " + locations.get(i).getPlace().name);
                 // parse location to pick-up item method(and put in inventory)
                 interact(c, i);
+                return;
             }
         }
     }
@@ -72,7 +73,7 @@ public class WorldMap {
                           }else{
                               interact(c, index);
                           }
-            case "EXIT": System.out.println("trying to exit");
+            case "EXIT": System.out.println("exiting..");
                          break;
             default: System.out.println("input not recognized.");
                      interact(c, index);

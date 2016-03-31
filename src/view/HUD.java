@@ -1,6 +1,7 @@
 package view;
 
 import model.WorldMap;
+import model.life.Creature;
 import model.life.Vehicle;
 
 /**
@@ -51,13 +52,20 @@ public class HUD {
 
     public static void titleScreen(){
         // encapsulate this stuff into the HUD
-        System.out.println("From the imagination of Carl Sagan comes:");
-        System.out.println("UFO");
-        System.out.println("---");
+        System.out.println("From the deceased imagination of Carl Sagan comes:");
+        System.out.println("+-------+");
+        System.out.println("| U.F.O |");
+        System.out.println("+-------+");
+    }
+
+    public static void intro(Creature alien){
+        System.out.println("You are an: " + alien.race + " named: " + alien.name + ".");
+        System.out.println("You've been selected by your race to do the annual report of the milky way \nand to monitor the progress of mankind.");
+        System.out.println("The elders advice: 'make sure you stock up on potions before encountering any humans, They are strong " + alien.name + "'.");
+        System.out.println("");
     }
 
     public static void vehicleInfo(Vehicle v){
         System.out.println("your moving at " + v.speed + "MPH with " + v.fuel + " gallons of fuel left.");
-        System.out.println("");
     }
 }

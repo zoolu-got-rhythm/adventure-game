@@ -38,9 +38,9 @@ public class Game {
         // plot co-ordinates for locations on earth
         WorldMap earth = new WorldMap(10, 10);
         earth.plot(new Point(1,1, new Location("old shed")));
-        earth.plot(new Point(2,0, new Location("drained swimming pool")));
-        earth.plot(new Point(3,5, new Location("crop circle")));
-        earth.plot(new Point(7,5, new Location("rundown factory")));
+        earth.plot(new Point(2,4, new Location("drained swimming pool")));
+        earth.plot(new Point(4,5, new Location("crop circle")));
+        earth.plot(new Point(7,8, new Location("rundown factory")));
 
         // plot co-ordinates for locations on the moon
         WorldMap moon = new WorldMap(5, 5);
@@ -63,8 +63,7 @@ public class Game {
 
 
         HUD.titleScreen();
-        System.out.println("You are an: " + alien.race + " named: " + alien.name + ".");
-        System.out.println("You've been selected by your race to do the annual survey of the milky way \nand to monitor the progress of mankind.");
+        HUD.intro(alien);
         milkyWay.getPlanets();
         System.out.println("Please Select a planet."); //loop through galaxy planets
 
@@ -80,6 +79,7 @@ public class Game {
                 System.out.println("move: 'N', 'E', 'S', 'W'");
                 String input = console.next();
                 HUD.update(input);
+                HUD.vehicleInfo(saucer);
 
                 // move Creature by x or y on planet z
                 Creature.move(saucer.driver, input, earth); // static meth
@@ -87,7 +87,7 @@ public class Game {
                 saucer.drainPetrol(1);
                 earth.getLocation(saucer.driver);
 
-                HUD.vehicleInfo(saucer);
+
             }
 
         } else if (planet.toUpperCase().equals("MOON")) {
@@ -99,6 +99,7 @@ public class Game {
                 System.out.println("move: 'N', 'E', 'S', 'W'");
                 String input = console.next();
                 HUD.update(input);
+                HUD.vehicleInfo(saucer);
 
                 // move Creature by x or y on planet z
                 Creature.move(saucer.driver, input, moon); // static meth
@@ -106,7 +107,7 @@ public class Game {
                 saucer.drainPetrol(1);
                 moon.getLocation(saucer.driver);
 
-                HUD.vehicleInfo(saucer);
+
             }
         } else {
             System.out.println("You can only currently visit 'earth' and 'moon' in this demo.");

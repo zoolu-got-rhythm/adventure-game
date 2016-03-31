@@ -45,7 +45,7 @@ public class Creature extends Organism{
         creature.pos.isOutOfBounds(map);
 
         System.out.println(creature.name + "'s position is: " + creature.pos.currentPosition());
-
+        System.out.println("");
     }
 
     public static void checkEncounter(Creature one, Creature two){
