@@ -7,7 +7,7 @@ import java.util.Vector;
  */
 public class Location {
     String name;
-    Thing n, e, s, w;
+    public Thing n, e, s, w;
     // Vector[] things = new Vector<?>();
 
     public Location(String name){

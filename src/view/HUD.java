@@ -13,6 +13,17 @@ public class HUD {
     }
 
     public static void update(String d){
+        String direction = "";
+        switch(d.toUpperCase()){
+            case "N": direction = "NORTH";
+                      break;
+            case "E": direction = "EAST";
+                      break;
+            case "S": direction = "SOUTH";
+                      break;
+            case "W": direction = "WEST";
+                      break;
+        }
 
         // re-fresh console
         System.out.print("\033[H\033[2J");
@@ -20,7 +31,7 @@ public class HUD {
 
         System.out.println("+-------------+");
         System.out.println("|      n      |");
-        System.out.println("|    w + e    |" + "  you move: " + d.toUpperCase() + "  map here");
+        System.out.println("|    w + e    |" + "  you move: " + direction);
         System.out.println("|      s      |");
         System.out.println("+-------------+");
 
@@ -39,20 +50,14 @@ public class HUD {
 //    }
 
     public static void titleScreen(){
-        System.out.println("                                                                          ");
-        System.out.println("           |         |                                                    ");
-        System.out.println("           |         |                                                    ");
-        System.out.println("           |         |                                                    ");
-        System.out.println("           |         |                                                    ");
-        System.out.println("           |         |                                                    ");
-        System.out.println("            - _ _ _ -                                                     ");
-        System.out.println("           ----------------------------------------------                 ");
-        System.out.println("                                                                          ");
-        System.out.println("                                                                          ");
-        System.out.println("                                                                          ");
+        // encapsulate this stuff into the HUD
+        System.out.println("From the imagination of Carl Sagan comes:");
+        System.out.println("UFO");
+        System.out.println("---");
     }
 
     public static void vehicleInfo(Vehicle v){
         System.out.println("your moving at " + v.speed + "MPH with " + v.fuel + " gallons of fuel left.");
+        System.out.println("");
     }
 }

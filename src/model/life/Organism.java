@@ -7,7 +7,7 @@ public class Organism {
 
     public String race = "unknown";
     int lifespan = 50;
-    int hp = 100;
+    int hp = 40;
 
 
     public String getRace() {

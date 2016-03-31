@@ -14,15 +14,15 @@ public class Thing {
 
     }
 
-    private void fetchThing(){
+    public Item fetchThing(){
         int dice = (int) Math.floor(Math.random() * 5);
 
         switch(dice){
-            case 1: new Creature("monster", "beast", new Point(2,2));
-            case 2: new Item("petrol");
-            case 3: new Item("baloon");
-            case 4: new Item("sword");
-            default: break;
+            case 1: return new Item("grenade", 20);
+            case 2: return new Item("gallon of petrol", 2);
+            case 3: return new Item("sheep", 0);
+            case 4: return new Item("cow", 0);
+            default: return new Item("potion", 15);
         }
     }
 

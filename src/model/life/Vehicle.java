@@ -1,5 +1,7 @@
 package model.life;
 
+import controller.Game;
+
 /**
  * Created by C1575287 on 07/03/2016.
  */
@@ -9,7 +11,7 @@ public class Vehicle {
     public String name;
     public int speed;
     public Creature driver;
-    public double fuel = 10;
+    public double fuel = 20;
 
     @Override
     public String toString() {
@@ -29,7 +31,11 @@ public class Vehicle {
 
     public void drainPetrol(int n){
         if(this.fuel == 0){
-            System.out.println("fly back up and re-fuel");
+            System.out.println("You've ran out of fuel.");
+            System.out.println("Try restarting the game and explore a different planet!");
+            System.exit(0);
+
+            // Game.planetSelect();
             // return to select planets
         }else{
             this.fuel = fuel - n;

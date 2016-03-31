@@ -28,10 +28,12 @@ public class Galaxy {
     public void getPlanets(){
         String planetNames = "Available planets are: ";
         for (int i = 0; i < planets.size(); i++){
-            if(i < planets.size() - 1){
+            if(i < planets.size() - 2){
                 planetNames += planets.get(i).name + ", ";
+            }else if(i < planets.size() - 1){
+                planetNames += planets.get(i).name + " ";
             }else{
-                planetNames += "and the " + planets.get(i).name + ".";
+                planetNames += "and " + planets.get(i).name + ".";
             }
         }
         System.out.println(planetNames);

@@ -42,6 +42,8 @@ public class Point {
         this.y = y;
     }
 
+    public Location getPlace(){ return place; }
+
     public void moveN() {
         this.x -= 1;
     }
@@ -74,6 +76,6 @@ public class Point {
     }
 
     public String currentPosition(){
-        return this.getX() + " " + this.getY();
+        return this.getX() + ", " + this.getY();
     };
 }

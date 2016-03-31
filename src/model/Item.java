@@ -5,9 +5,11 @@ package model;
  */
 public class Item {
 
-    String name;
-    public Item(String name){
+    public String name;
+    int value;
+    public Item(String name, int value){
         this.name = name;
+        this.value = value;
     }
 
 
