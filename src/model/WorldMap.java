@@ -29,6 +29,7 @@ public class WorldMap {
 
         // loop through locations and check if any of their point.x and y's match with the currentPos,
         // if so run a method where you can check for their things.
+
         for (int i = 0; i < locations.size(); i++){
             if(c.pos.getX() == locations.get(i).getX() && c.pos.getY() == locations.get(i).getY()){
                 System.out.println("you are at: " + locations.get(i).getPlace().name);
@@ -48,30 +49,39 @@ public class WorldMap {
         Item three = locations.get(index).getPlace().e.fetchThing();
         Item four = locations.get(index).getPlace().w.fetchThing();
 
+
         switch(look.toUpperCase()){
             case "AHEAD": if(pickup(one)){
                               c.loot(c, one);
                               interact(c, index);
+                              break;
                           }else{
                               interact(c, index);
+                              break;
                           }
             case "BEHIND": if(pickup(two)){
                                c.loot(c, two);
                                interact(c, index);
+                               break;
                            }else{
                                interact(c, index);
+                               break;
                            }
             case "LEFT": if(pickup(three)){
                              c.loot(c, three);
                              interact(c, index);
+                             break;
                          }else{
                              interact(c, index);
+                             break;
                          }
             case "RIGHT": if(pickup(four)){
                               c.loot(c, four);
                               interact(c, index);
+                              break;
                           }else{
                               interact(c, index);
+                              break;
                           }
             case "EXIT": System.out.println("exiting..");
                          break;

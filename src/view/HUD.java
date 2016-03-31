@@ -26,10 +26,6 @@ public class HUD {
                       break;
         }
 
-        // re-fresh console
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
         System.out.println("+-------------+");
         System.out.println("|      n      |");
         System.out.println("|    w + e    |" + "  you move: " + direction);
