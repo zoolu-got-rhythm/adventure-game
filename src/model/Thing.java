@@ -19,7 +19,7 @@ public class Thing {
 
         switch(dice){
             case 1: return new Item("grenade", 20);
-            case 2: return new Item("gallon of petrol", 2);
+            case 2: return new Item("petrol", 2);
             case 3: return new Item("sheep", 0);
             case 4: return new Item("cow", 0);
             default: return new Item("potion", 15);

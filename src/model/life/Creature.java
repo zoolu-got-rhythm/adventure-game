@@ -141,11 +141,11 @@ public class Creature extends Organism{
                     System.out.println("you don't have any cows.");
                     break;
                 }
-            case "GALLON OF PETROL":
-                if (itemStock(c, "GALLON OF PETROL")) {
+            case "PETROL":
+                if (itemStock(c, "PETROL")) {
                     hit(c2, 0); // use this for other items too.
                     hit(c);
-                    removeItem(c, "GALLON OF PETROL");
+                    removeItem(c, "PETROL");
                     break;
                 } else {
                     System.out.println("you don't have any petrol.");
